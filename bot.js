@@ -14,7 +14,7 @@ client.on("message", message => {
   message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
   m.send(`${argresult}\n ${m}`);
   })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
+  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  users claimd the message `);
   message.delete();
   };
   });
@@ -58,7 +58,7 @@ client.on('ready',  () => {
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('$adminbc')){
 if(!message.author.id === '476185102922285066') return;
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
+message.channel.sendMessage('waiting sending the message |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
 })
@@ -76,21 +76,30 @@ m.sendMessage(args)
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
-         .setDescription(`**Help|هيلب
+         .setDescription(`**Help|
 
-       $obc | لأرسال برود كاست للكل
+       $obc | to send brodcast to all member
+       $bc  | to send brodcast to only online members 
+       $adminbc | a normal brodcast 
 
-       $bc  |  لأرسال برود كاست للأونلاين
+       this bot maded by rayen 
+       hosted by Mania oLD FRIEND 
 
-       $adminbc | برودكاست عادي
 
-       ** `)
-   message.author.sendEmbed(embed)
+     clinet.on("message", message => {
+     if (message.content === "$source") {
+     const embed = new Discord.RichEmbed() 
+         .setColor("#00FF00")
+         .setThumbnail(message.author.avatarURL)
+         .setDescription(`**source|
+           
+
+          i just this bot for my old friend
    
    }
    });
 
-const developers = ["472413769700474901","id"]
+const developers = ["378464839753924610","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
